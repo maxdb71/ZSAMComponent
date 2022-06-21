@@ -1,0 +1,19 @@
+{
+	"Service": "/ZSAMComponent/Services/AssetManager.service",
+	"Collection": [
+		"BusinessAreas"
+	],
+	"Properties": [
+		{
+			"_Type": "Edm.String",
+			"Key": true,
+			"_Name": "BusinessArea"
+		},
+		{
+			"_Type": "Edm.String",
+			"Key": false,
+			"_Name": "BusinessAreaDesc"
+		}
+	],
+	"_Name": "BusinessArea"
+}

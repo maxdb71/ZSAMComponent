@@ -1,0 +1,29 @@
+{
+	"Service": "/ZSAMComponent/Services/AssetManager.service",
+	"Collection": [
+		"UsageUoMs"
+	],
+	"Properties": [
+		{
+			"_Type": "Edm.String",
+			"Key": true,
+			"_Name": "UoM"
+		},
+		{
+			"_Type": "Edm.String",
+			"Key": false,
+			"_Name": "Dimension"
+		},
+		{
+			"_Type": "Edm.String",
+			"Key": false,
+			"_Name": "Description"
+		},
+		{
+			"_Type": "Edm.String",
+			"Key": false,
+			"_Name": "ExternalUoM"
+		}
+	],
+	"_Name": "UsageUoM"
+}

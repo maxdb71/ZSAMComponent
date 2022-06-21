@@ -1,0 +1,66 @@
+{
+	"Service": "/ZSAMComponent/Services/AssetManager.service",
+	"Collection": [
+		"MaterialDocuments"
+	],
+	"Properties": [
+		{
+			"_Type": "Edm.String",
+			"Key": false,
+			"_Name": "GMCode"
+		},
+		{
+			"_Type": "Edm.String",
+			"Key": false,
+			"_Name": "BillOfLading"
+		},
+		{
+			"_Type": "Edm.String",
+			"Key": true,
+			"_Name": "MaterialDocNumber"
+		},
+		{
+			"_Type": "Edm.String",
+			"Key": true,
+			"_Name": "MaterialDocYear"
+		},
+		{
+			"_Type": "Edm.String",
+			"Key": false,
+			"_Name": "HeaderText"
+		},
+		{
+			"_Type": "Edm.String",
+			"Key": false,
+			"_Name": "RefDocumentNumber"
+		},
+		{
+			"_Type": "Edm.String",
+			"Key": false,
+			"_Name": "GoodsReceiptIssueNumber"
+		},
+		{
+			"_Type": "Edm.String",
+			"Key": false,
+			"_Name": "UserName"
+		},
+		{
+			"_Type": "Edm.DateTime",
+			"Key": false,
+			"_Name": "PostingDate"
+		},
+		{
+			"_Type": "Edm.DateTime",
+			"Key": false,
+			"_Name": "DocumentDate"
+		}
+	],
+	"NavigationProperties": [
+		{
+			"_Type": "Collection(MaterialDocItem)",
+			"Key": false,
+			"_Name": "RelatedItem"
+		}
+	],
+	"_Name": "MaterialDocument"
+}

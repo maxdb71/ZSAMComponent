@@ -1,0 +1,41 @@
+{
+	"Service": "/ZSAMComponent/Services/AssetManager.service",
+	"Collection": [
+		"MyWorkOrderDocuments"
+	],
+	"Properties": [
+		{
+			"_Type": "Edm.String",
+			"Key": true,
+			"_Name": "RelationshipID"
+		},
+		{
+			"_Type": "Edm.String",
+			"Key": true,
+			"_Name": "ObjectKey"
+		},
+		{
+			"_Type": "Edm.String",
+			"Key": false,
+			"_Name": "DocumentID"
+		},
+		{
+			"_Type": "Edm.String",
+			"Key": false,
+			"_Name": "OrderId"
+		}
+	],
+	"NavigationProperties": [
+		{
+			"_Type": "Document",
+			"Key": false,
+			"_Name": "Document"
+		},
+		{
+			"_Type": "MyWorkOrderHeader",
+			"Key": false,
+			"_Name": "WOHeader"
+		}
+	],
+	"_Name": "MyWorkOrderDocument"
+}

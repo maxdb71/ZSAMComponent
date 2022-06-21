@@ -1,0 +1,19 @@
+{
+	"Service": "/ZSAMComponent/Services/AssetManager.service",
+	"Collection": [
+		"ZDigitalImpacts"
+	],
+	"Properties": [
+		{
+			"_Type": "Edm.String",
+			"Key": true,
+			"_Name": "dig_imp"
+		},
+		{
+			"_Type": "Edm.String",
+			"Key": false,
+			"_Name": "des_imp"
+		}
+	],
+	"_Name": "ZDigitalImpact"
+}

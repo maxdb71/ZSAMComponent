@@ -1,0 +1,24 @@
+{
+	"Service": "/ZSAMComponent/Services/AssetManager.service",
+	"Collection": [
+		"ZAdditionalActivityCodes"
+	],
+	"Properties": [
+		{
+			"_Type": "Edm.String",
+			"Key": true,
+			"_Name": "NATURE"
+		},
+		{
+			"_Type": "Edm.String",
+			"Key": false,
+			"_Name": "NATURE_TXT"
+		},
+		{
+			"_Type": "Edm.String",
+			"Key": false,
+			"_Name": "SORT"
+		}
+	],
+	"_Name": "ZAdditionalActivityCode"
+}

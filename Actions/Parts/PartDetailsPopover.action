@@ -1,0 +1,23 @@
+{
+    "PopoverItems": [
+        {
+            "Title": "$(L,issue_part)",
+            "OnPress": "/SAPAssetManager/Rules/Parts/Issue/PartIssueNav.js",
+            "Visible": "/SAPAssetManager/Rules/Parts/Issue/IssueEnable.js"
+        },
+        {
+            "Title" : "/SAPAssetManager/Rules/Notes/NotePopoverSelectionText.js",
+            "OnPress": "/SAPAssetManager/Rules/Notes/NoteCreateNav.js"
+        },
+        {  
+            "Title": "Edit",
+            "OnPress": "/SAPAssetManager/Rules/Parts/PartUpdateNav.js"
+        },
+        {
+        	"Title": "$(L,return_text)",
+            "OnPress": "/SAPAssetManager/Rules/Parts/Return/CreateUpdate/PartReturnCreate.js",
+             "Visible": "/SAPAssetManager/Rules/Parts/Return/CreateUpdate/PartReturnEnable.js"
+        }
+    ],
+    "_Type": "Action.Type.PopoverMenu"
+}

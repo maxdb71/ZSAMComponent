@@ -1,0 +1,46 @@
+{
+	"Service": "/ZSAMComponent/Services/AssetManager.service",
+	"Collection": [
+		"CustomerSalesData"
+	],
+	"Properties": [
+		{
+			"_Type": "Edm.String",
+			"Key": true,
+			"_Name": "SalesOrg"
+		},
+		{
+			"_Type": "Edm.String",
+			"Key": true,
+			"_Name": "DistributionChannel"
+		},
+		{
+			"_Type": "Edm.String",
+			"Key": true,
+			"_Name": "Division"
+		},
+		{
+			"_Type": "Edm.String",
+			"Key": true,
+			"_Name": "Customer"
+		},
+		{
+			"_Type": "Edm.String",
+			"Key": false,
+			"_Name": "IncoTerms"
+		},
+		{
+			"_Type": "Edm.String",
+			"Key": false,
+			"_Name": "IncotermsPart2"
+		}
+	],
+	"NavigationProperties": [
+		{
+			"_Type": "Customer",
+			"Key": false,
+			"_Name": "Customer_Nav"
+		}
+	],
+	"_Name": "CustomerSalesData"
+}

@@ -1,0 +1,166 @@
+{
+	"Service": "/ZSAMComponent/Services/AssetManager.service",
+	"Collection": [
+		"PMMobileStatuses"
+	],
+	"Properties": [
+		{
+			"_Type": "Edm.String",
+			"Key": true,
+			"_Name": "ObjectKey"
+		},
+		{
+			"_Type": "Edm.Int32",
+			"Key": false,
+			"_Name": "BeginTimeCounter"
+		},
+		{
+			"_Type": "Edm.String",
+			"Key": false,
+			"_Name": "CarriedOutBy"
+		},
+		{
+			"_Type": "Edm.DateTime",
+			"Key": false,
+			"_Name": "CarriedOutDate"
+		},
+		{
+			"_Type": "Edm.Time",
+			"Key": false,
+			"_Name": "CarriedOutTime"
+		},
+		{
+			"_Type": "Edm.DateTime",
+			"Key": false,
+			"_Name": "EffectiveTimestamp"
+		},
+		{
+			"_Type": "Edm.Int32",
+			"Key": false,
+			"_Name": "EndTimeCounter"
+		},
+		{
+			"_Type": "Edm.String",
+			"Key": false,
+			"_Name": "MobileStatus"
+		},
+		{
+			"_Type": "Edm.DateTime",
+			"Key": false,
+			"_Name": "NotificationRefDate"
+		},
+		{
+			"_Type": "Edm.Time",
+			"Key": false,
+			"_Name": "NotificationRefTime"
+		},
+		{
+			"_Type": "Edm.String",
+			"Key": false,
+			"_Name": "ObjectType"
+		},
+		{
+			"_Type": "Edm.String",
+			"Key": false,
+			"_Name": "SystemStatus"
+		},
+		{
+			"_Type": "Edm.String",
+			"Key": false,
+			"_Name": "SystemStatusCode"
+		},
+		{
+			"_Type": "Edm.String",
+			"Key": false,
+			"_Name": "UserStatus"
+		},
+		{
+			"_Type": "Edm.String",
+			"Key": false,
+			"_Name": "UserStatusCode"
+		},
+		{
+			"_Type": "Edm.String",
+			"Key": false,
+			"_Name": "OrderId"
+		},
+		{
+			"_Type": "Edm.String",
+			"Key": false,
+			"_Name": "OperationNo"
+		},
+		{
+			"_Type": "Edm.String",
+			"Key": false,
+			"_Name": "SubOperationNo"
+		},
+		{
+			"_Type": "Edm.String",
+			"Key": false,
+			"_Name": "SortField"
+		},
+		{
+			"_Type": "Edm.String",
+			"Key": false,
+			"_Name": "NotifNum"
+		},
+		{
+			"_Type": "Edm.String",
+			"Key": false,
+			"_Name": "TaskNum"
+		},
+		{
+			"_Type": "Edm.String",
+			"Key": false,
+			"_Name": "ItemNum"
+		},
+		{
+			"_Type": "Edm.String",
+			"Key": false,
+			"_Name": "CreateUserGUID"
+		},
+		{
+			"_Type": "Edm.String",
+			"Key": false,
+			"_Name": "UpdateUserGUID"
+		}
+	],
+	"NavigationProperties": [
+		{
+			"_Type": "MyNotificationHeader",
+			"Key": false,
+			"_Name": "NotifHeader_Nav"
+		},
+		{
+			"_Type": "MyNotificationItemTask",
+			"Key": false,
+			"_Name": "NotifItemTask_Nav"
+		},
+		{
+			"_Type": "MyNotificationTask",
+			"Key": false,
+			"_Name": "NotifTask_Nav"
+		},
+		{
+			"_Type": "MyWorkOrderHeader",
+			"Key": false,
+			"_Name": "WOHeader_Nav"
+		},
+		{
+			"_Type": "WorkOrderHistory",
+			"Key": false,
+			"_Name": "WOHistory_Nav"
+		},
+		{
+			"_Type": "MyWorkOrderOperation",
+			"Key": false,
+			"_Name": "WOOperation_Nav"
+		},
+		{
+			"_Type": "MyWorkOrderSubOperation",
+			"Key": false,
+			"_Name": "WOSubOperation_Nav"
+		}
+	],
+	"_Name": "PMMobileStatus"
+}

@@ -1,0 +1,61 @@
+{
+	"Service": "/ZSAMComponent/Services/AssetManager.service",
+	"Collection": [
+		"Plants"
+	],
+	"Properties": [
+		{
+			"_Type": "Edm.String",
+			"Key": true,
+			"_Name": "Plant"
+		},
+		{
+			"_Type": "Edm.String",
+			"Key": false,
+			"_Name": "PlantDescription"
+		},
+		{
+			"_Type": "Edm.String",
+			"Key": false,
+			"_Name": "ValuationArea"
+		},
+		{
+			"_Type": "Edm.String",
+			"Key": false,
+			"_Name": "CompanyCode"
+		},
+		{
+			"_Type": "Edm.String",
+			"Key": false,
+			"_Name": "SalesOrganization"
+		},
+		{
+			"_Type": "Edm.String",
+			"Key": false,
+			"_Name": "DistributionChannel"
+		},
+		{
+			"_Type": "Edm.String",
+			"Key": false,
+			"_Name": "Division"
+		},
+		{
+			"_Type": "Edm.String",
+			"Key": false,
+			"_Name": "PlanningPlant"
+		}
+	],
+	"NavigationProperties": [
+		{
+			"_Type": "Division",
+			"Key": false,
+			"_Name": "Division_Nav"
+		},
+		{
+			"_Type": "Collection(StorageLocation)",
+			"Key": false,
+			"_Name": "StorageLocations_Nav"
+		}
+	],
+	"_Name": "Plant"
+}

@@ -1,0 +1,26 @@
+{
+	"Service": "/ZSAMComponent/Services/AssetManager.service",
+	"Collection": [
+		"EquipObjectTypes"
+	],
+	"Properties": [
+		{
+			"_Type": "Edm.String",
+			"Key": true,
+			"_Name": "ObjectType"
+		},
+		{
+			"_Type": "Edm.String",
+			"Key": false,
+			"_Name": "ObjectTypeDesc"
+		}
+	],
+	"NavigationProperties": [
+		{
+			"_Type": "Collection(MyEquipment)",
+			"Key": false,
+			"_Name": "MyEquipments_Nav"
+		}
+	],
+	"_Name": "EquipObjectType"
+}

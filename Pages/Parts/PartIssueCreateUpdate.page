@@ -1,0 +1,163 @@
+{
+	"ActionBar": {
+		"Items": [
+			{
+				"OnPress": "/SAPAssetManager/Actions/Page/CancelPage.action",
+				"Position": "left",
+				"SystemItem": "Cancel"
+			},
+			{
+				"OnPress": "/SAPAssetManager/Actions/Parts/PartIssueCreateHeader.action",
+				"Position": "right",
+                "SystemItem": "$(PLT,'Done','')",
+				"Text": "/SAPAssetManager/Rules/Common/Platform/DoneText.js"
+			}
+		]
+	},
+	"Caption": "$(L,issue_part)",
+	"Controls": [
+		{
+			"Sections": [
+				{
+					"Controls": [
+						{
+							"Caption": "$(L,plant)",
+							"IsEditable": false,
+							"ReadOnly": true,
+							"_Name": "PlantSim",
+							"_Type": "Control.Type.FormCell.SimpleProperty"
+						},
+						{
+							"Caption": "$(L,part)",
+							"IsEditable": false,
+							"ReadOnly": true,
+							"_Name": "MaterialSim",
+							"_Type": "Control.Type.FormCell.SimpleProperty"
+						}
+					],
+					"Visible": true
+				},
+				{
+					"Controls": [
+						{
+							"AllowMultipleSelection": false,
+							"Caption": "$(L,storage_location)",
+							"IsPickerDismissedOnSelection": true,
+							"IsSearchCancelledAfterSelection": true,
+							"OnValueChange": "/ZSAMComponent/Rules/Parts/CreateUpdate/SetMaterialUoMAndValuationType.js",
+							"PickerItems": {
+								"DisplayValue": "{{#Property:StorageLocation}} - {{#Property:StorageLocationDesc}}",
+								"ReturnValue": "{StorageLocation}",
+								"Target": {
+									"EntitySet": "MaterialSLocs",
+									"QueryOptions": "$filter=MaterialNum eq '{{#Property:MaterialNum}}' and Plant eq '{{#Property:Plant}}'",
+									"Service": "/SAPAssetManager/Services/AssetManager.service"
+								}
+							},
+							"PlaceHolder": "",
+							"Search": {
+								"BarcodeScanner": true,
+								"Delay": 500,
+								"Enabled": true,
+								"MinimumCharacterThreshold": 3,
+								"Placeholder": "$(L,search)"
+							},
+							"Value": "{StorageLocation}",
+							"_Name": "StorageLocationLstPkr",
+							"_Type": "Control.Type.FormCell.ListPicker"
+						},
+						{
+							"AllowMultipleSelection": false,
+							"Caption": "$(L,batch_number)",
+							"IsPickerDismissedOnSelection": true,
+							"IsSearchCancelledAfterSelection": true,
+							"IsVisible": "/ZSAMComponent/Rules/Parts/Issue/BatchEnabled.js",
+							"OnValueChange": "/ZSAMComponent/Rules/Parts/ValuationTypeOnValueChange.js",
+							"PickerItems": {
+								"ReturnValue": "{Batch}",
+								"Target": {
+									"EntitySet": "MaterialBatches",
+									"QueryOptions": "$filter=MaterialNum eq '{{#Property:MaterialNum}}' and Plant eq '{{#Property:Plant}}'",
+									"Service": "/SAPAssetManager/Services/AssetManager.service"
+								}
+							},
+							"Search": {
+								"BarcodeScanner": true,
+								"Delay": 500,
+								"Enabled": true,
+								"MinimumCharacterThreshold": 3,
+								"Placeholder": "$(L,search)"
+							},
+							"Value": "{Batch}",
+							"_Name": "BatchNumLstPkr",
+							"_Type": "Control.Type.FormCell.ListPicker"
+						},
+						{
+							"Caption": "$(L,auto_generate_serial_numbers)",
+							"IsVisible": "/SAPAssetManager/Rules/Parts/Issue/SerialParts/SerialPartsAreAllowed.js",
+							"OnValueChange": "/SAPAssetManager/Rules/Parts/AutoSerializedSwitch.js",
+							"Value": false,
+							"_Name": "AutoGenerateSerialNumberSwitch",
+							"_Type": "Control.Type.FormCell.Switch"
+						},
+						{
+							"Caption": "$(L,serial_number)",
+							"IsEditable": false,
+							"IsVisible": false,
+							"Value": "$(L,auto_generate)",
+							"_Name": "AutoGenerateSingleProperty",
+							"_Type": "Control.Type.FormCell.SimpleProperty"
+						},
+						{
+							"AllowMultipleSelection": true,
+							"Caption": "$(L,serial_number)",
+							"IsPickerDismissedOnSelection": true,
+							"IsSearchCancelledAfterSelection": true,
+							"IsVisible": "/SAPAssetManager/Rules/Parts/Issue/SerialParts/SerialPartsAreAllowed.js",
+							"OnValueChange": "/SAPAssetManager/Rules/Parts/SerialNumberListPicker.js",
+							"PickerItems": {
+								"ObjectCell": {
+									"Title": "{SerialNumber}"
+								},
+								"ReturnValue": "{SerialNumber}",
+								"Target": {
+									"EntitySet": "{{#Property:@odata.readLink}}/Material/SerialNumbers",
+									"QueryOptions": "/ZSAMComponent/Rules/Parts/Issue/SerialNumberQueryOptions.js",
+									"Service": "/SAPAssetManager/Services/AssetManager.service"
+								}
+							},
+							"Search": {
+								"BarcodeScanner": true,
+								"Delay": 500,
+								"Enabled": true,
+								"MinimumCharacterThreshold": 3,
+								"Placeholder": "$(L,search)"
+							},
+							"_Name": "SerialNumLstPkr",
+							"_Type": "Control.Type.FormCell.ListPicker"
+						},
+						{
+							"Caption": "$(L,quantity)",
+							"IsEditable": true,
+							"KeyboardType": "Number",
+							"_Name": "QuantitySim",
+							"_Type": "Control.Type.FormCell.SimpleProperty"
+						},
+						{
+							"Caption": "$(L,uom)",
+							"Value": "{UnitOfMeasure}",
+							"_Name": "UOMSim",
+							"_Type": "Control.Type.FormCell.SimpleProperty"
+						}
+					],
+					"Visible": true
+				}
+			],
+			"_Name": "FormCellContainer",
+			"_Type": "Control.Type.FormCellContainer"
+		}
+	],
+	"OnLoaded": "/SAPAssetManager/Rules/Parts/Issue/CreateUpdate/PartIssueCreateUpdateOnPageLoad.js",
+	"_Name": "PartIssueCreateUpdatePage",
+	"_Type": "Page"
+}

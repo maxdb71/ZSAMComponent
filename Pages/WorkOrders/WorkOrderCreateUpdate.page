@@ -1,0 +1,431 @@
+{
+	"ActionBar": {
+		"Items": [
+			{
+				"OnPress": "/SAPAssetManager/Rules/Common/CheckForChangesBeforeCancel.js",
+				"Position": "left",
+				"SystemItem": "Cancel"
+			},
+			{
+				"OnPress": "/SAPAssetManager/Actions/WorkOrders/CreateUpdate/WorkOrderCreateUpdateRequired.action",
+				"Position": "right",
+				"SystemItem": "/SAPAssetManager/Rules/Common/ChangeSet/ChangeSetCreateUpdateButtonIcon.js",
+				"Text": "/SAPAssetManager/Rules/Common/ChangeSet/ChangeSetCreateUpdateButtonText.js"
+			}
+		]
+	},
+	"Controls": [
+		{
+			"Sections": [
+				{
+					"Controls": [
+						{
+							"Caption": "$(L,order_id)",
+							"IsEditable": false,
+							"IsVisible": false,
+							"PlaceHolder": "$(L,order_id)",
+							"Value": "{OrderId}",
+							"_Name": "OrderIdTitle",
+							"_Type": "Control.Type.FormCell.Title"
+						},
+						{
+							"Caption": "$(L,description)",
+							"IsAutoResizing": true,
+							"PlaceHolder": "$(L,description)",
+							"Value": "{OrderDescription}",
+							"_Name": "DescriptionNote",
+							"_Type": "Control.Type.FormCell.Note"
+						}
+					],
+					"Visible": true
+				},
+				{
+					"Controls": [
+						{
+							"AllowMultipleSelection": false,
+							"Caption": "$(L,planning_plant)",
+							"IsEditable": "/SAPAssetManager/Rules/WorkOrders/CreateUpdate/WorkOrderCreateUpdateEditable.js",
+							"IsPickerDismissedOnSelection": true,
+							"IsSearchCancelledAfterSelection": true,
+							"OnValueChange": "/SAPAssetManager/Rules/WorkOrders/CreateUpdate/WorkOrderCreateUpdateOnChange.js",
+							"PickerItems": "/SAPAssetManager/Rules/WorkOrders/CreateUpdate/WorkOrderCreateUpdateControlsPickerItems.js",
+							"Search": {
+								"BarcodeScanner": true,
+								"Delay": 500,
+								"Enabled": true,
+								"MinimumCharacterThreshold": 3,
+								"Placeholder": "$(L,search)"
+							},
+							"Value": "/SAPAssetManager/Rules/WorkOrders/CreateUpdate/WorkOrderCreateUpdateDefault.js",
+							"_Name": "PlanningPlantLstPkr",
+							"_Type": "Control.Type.FormCell.ListPicker"
+						},
+						{
+							"AllowMultipleSelection": false,
+							"Caption": "$(L,type)",
+							"IsEditable": false,
+							"IsPickerDismissedOnSelection": true,
+							"IsSearchCancelledAfterSelection": true,
+							"OnValueChange": "/SAPAssetManager/Rules/WorkOrders/CreateUpdate/WorkOrderCreateUpdateOnChange.js",
+							"PickerItems": {
+								"DisplayValue": "{{#Property:OrderType}} - {{#Property:OrderTypeDesc}}",
+								"ReturnValue": "{OrderType}",
+								"Target": {
+									"EntitySet": "OrderTypes",
+									"QueryOptions": "/SAPAssetManager/Rules/WorkOrders/CreateUpdate/WorkOrderCreateUpdateControlsQueryOptions.js",
+									"Service": "/SAPAssetManager/Services/AssetManager.service"
+								}
+							},
+							"Search": {
+								"BarcodeScanner": true,
+								"Delay": 500,
+								"Enabled": true,
+								"MinimumCharacterThreshold": 3,
+								"Placeholder": "$(L,search)"
+							},
+							"Value": "{OrderType}",
+							"_Name": "TypeLstPkr",
+							"_Type": "Control.Type.FormCell.ListPicker"
+						},
+						{
+							"Caption": "$(L,priority)",
+							"Segments": {
+								"DisplayValue": "{PriorityDescription}",
+								"ReturnValue": "{Priority}",
+								"Target": {
+									"EntitySet": "Priorities",
+									"QueryOptions": "/SAPAssetManager/Rules/WorkOrders/CreateUpdate/WorkOrderCreateUpdateControlsQueryOptions.js",
+									"Service": "/SAPAssetManager/Services/AssetManager.service"
+								}
+							},
+							"Value": "{Priority}",
+							"_Name": "PrioritySeg",
+							"_Type": "Control.Type.FormCell.SegmentedControl"
+						},
+						{
+							"AllowMultipleSelection": false,
+							"Caption": "$(L,zpma)",
+							"IsPickerDismissedOnSelection": true,
+							"IsEditable":"/ZSAMComponent/Rules/Common/EntityIsLocal.js",
+							"IsSearchCancelledAfterSelection": true,
+							"PickerItems": {
+								"DisplayValue": "{{#Property:ActivityType}} - {{#Property:ActivityTypeDescription}}",
+								"ReturnValue": "{ActivityType}",
+								"Target": {
+									"EntitySet": "ActivityTypes",
+									"QueryOptions": "$filter=OrderType eq '{{#Property:OrderType}}'&$orderby=ActivityType",
+									"Service": "/SAPAssetManager/Services/AssetManager.service"
+								}
+							},
+							"Search": {
+								"BarcodeScanner": true,
+								"Delay": 500,
+								"Enabled": true,
+								"MinimumCharacterThreshold": 3,
+								"Placeholder": "$(L,search)"
+							},
+							"Value": "{MaintenanceActivityType}",
+							"_Name": "PMActivityTypeLstPkr",
+							"_Type": "Control.Type.FormCell.ListPicker"
+						},
+						{
+							"AllowMultipleSelection": false,
+							"Caption": "$(L,functional_location)",
+							"IsEditable": "/SAPAssetManager/Rules/WorkOrders/CreateUpdate/WorkOrderCreateUpdateEditable.js",
+							"IsPickerDismissedOnSelection": true,
+							"IsSearchCancelledAfterSelection": true,
+							"OnValueChange": "/SAPAssetManager/Rules/WorkOrders/CreateUpdate/WorkOrderCreateUpdateOnChange.js",
+							"PickerItems": {
+								"DisplayValue": "{{#Property:FuncLocId}} - {{#Property:FuncLocDesc}}",
+								"ReturnValue": "{FuncLocIdIntern}",
+								"Target": {
+									"EntitySet": "MyFunctionalLocations",
+									"QueryOptions": "/SAPAssetManager/Rules/WorkOrders/CreateUpdate/WorkOrderCreateUpdateControlsQueryOptions.js",
+									"Service": "/SAPAssetManager/Services/AssetManager.service"
+								}
+							},
+							"Search": {
+								"BarcodeScanner": true,
+								"Delay": 500,
+								"Enabled": true,
+								"MinimumCharacterThreshold": 3,
+								"Placeholder": "$(L,search)"
+							},
+							"Value": "{HeaderFunctionLocation}",
+							"_Name": "FunctionalLocationLstPkr",
+							"_Type": "Control.Type.FormCell.ListPicker"
+						},
+						{
+							"AllowMultipleSelection": false,
+							"Caption": "$(L,equipment)",
+							"IsEditable": "/SAPAssetManager/Rules/WorkOrders/CreateUpdate/WorkOrderCreateUpdateEditable.js",
+							"IsPickerDismissedOnSelection": true,
+							"IsSearchCancelledAfterSelection": true,
+							"OnValueChange": "/SAPAssetManager/Rules/WorkOrders/CreateUpdate/WorkOrderCreateUpdateOnChange.js",
+							"PickerItems": {
+								"DisplayValue": "{{#Property:EquipId}} - {{#Property:EquipDesc}}",
+								"ReturnValue": "{EquipId}",
+								"Target": {
+									"EntitySet": "MyEquipments",
+									"QueryOptions": "/SAPAssetManager/Rules/WorkOrders/CreateUpdate/WorkOrderCreateUpdateControlsQueryOptions.js",
+									"Service": "/SAPAssetManager/Services/AssetManager.service"
+								}
+							},
+							"PlaceHolder": "",
+							"Search": {
+								"BarcodeScanner": true,
+								"Delay": 500,
+								"Enabled": true,
+								"MinimumCharacterThreshold": 3,
+								"Placeholder": "$(L,search)"
+							},
+							"Value": "{HeaderEquipment}",
+							"_Name": "EquipmentLstPkr",
+							"_Type": "Control.Type.FormCell.ListPicker"
+						},
+						{
+							"AllowMultipleSelection": false,
+							"Caption": "$(L,business_area)",
+							"IsPickerDismissedOnSelection": true,
+							"IsSearchCancelledAfterSelection": true,
+							"IsVisible": false,
+							"OnValueChange": "/SAPAssetManager/Rules/WorkOrders/CreateUpdate/WorkOrderCreateUpdateOnChange.js",
+							"PickerItems": {
+								"DisplayValue": "{{#Property:BusinessArea}} - {{#Property:BusinessAreaDesc}}",
+								"ReturnValue": "{BusinessArea}",
+								"Target": {
+									"EntitySet": "BusinessAreas",
+									"QueryOptions": "$orderby=BusinessAreaDesc asc",
+									"Service": "/SAPAssetManager/Services/AssetManager.service"
+								}
+							},
+							"Search": {
+								"BarcodeScanner": true,
+								"Delay": 500,
+								"Enabled": true,
+								"MinimumCharacterThreshold": 3,
+								"Placeholder": "$(L,search)"
+							},
+							"Value": "{BusinessArea}",
+							"_Name": "BusinessAreaLstPkr",
+							"_Type": "Control.Type.FormCell.ListPicker"
+						},
+						{
+							"AllowMultipleSelection": false,
+							"Caption": "$(L,work_center_plant)",
+							"IsEditable": "/SAPAssetManager/Rules/WorkOrders/CreateUpdate/WorkOrderCreateUpdateEditable.js",
+							"IsPickerDismissedOnSelection": true,
+							"IsSearchCancelledAfterSelection": true,
+							"IsVisible": false,
+							"OnValueChange": "/SAPAssetManager/Rules/WorkOrders/CreateUpdate/WorkOrderCreateUpdateOnChange.js",
+							"PickerItems": "/SAPAssetManager/Rules/WorkOrders/CreateUpdate/WorkOrderCreateUpdateControlsPickerItems.js",
+							"PlaceHolder": "",
+							"Search": {
+								"BarcodeScanner": true,
+								"Delay": 500,
+								"Enabled": true,
+								"MinimumCharacterThreshold": 3,
+								"Placeholder": "$(L,search)"
+							},
+							"Value": "/SAPAssetManager/Rules/WorkOrders/CreateUpdate/WorkOrderCreateUpdateDefault.js",
+							"_Name": "WorkCenterPlantLstPkr",
+							"_Type": "Control.Type.FormCell.ListPicker"
+						},
+						{
+							"AllowMultipleSelection": false,
+							"Caption": "$(L,main_work_center)",
+							"IsEditable": "/SAPAssetManager/Rules/WorkOrders/CreateUpdate/WorkOrderCreateUpdateEditable.js",
+							"IsPickerDismissedOnSelection": true,
+							"IsSearchCancelledAfterSelection": true,
+							"IsVisible": false,
+							"OnValueChange": "/SAPAssetManager/Rules/WorkOrders/CreateUpdate/WorkOrderCreateUpdateOnChange.js",
+							"PickerItems": {
+								"DisplayValue": "{ExternalWorkCenterId}",
+								"ReturnValue": "{ExternalWorkCenterId}",
+								"Target": {
+									"EntitySet": "WorkCenters",
+									"QueryOptions": "/SAPAssetManager/Rules/WorkOrders/CreateUpdate/WorkOrderCreateUpdateControlsQueryOptions.js",
+									"Service": "/SAPAssetManager/Services/AssetManager.service"
+								}
+							},
+							"PlaceHolder": "",
+							"Search": {
+								"BarcodeScanner": true,
+								"Delay": 500,
+								"Enabled": true,
+								"MinimumCharacterThreshold": 3,
+								"Placeholder": "$(L,search)"
+							},
+							"Value": "/SAPAssetManager/Rules/WorkOrders/CreateUpdate/WorkOrderCreateUpdateDefault.js",
+							"_Name": "MainWorkCenterLstPkr",
+							"_Type": "Control.Type.FormCell.ListPicker"
+						},
+						{
+							"AllowMultipleSelection": false,
+							"Caption": "$(L,zaddactivitycode)",
+							"IsPickerDismissedOnSelection": true,
+							"IsSearchCancelledAfterSelection": true,
+							"PickerItems": {
+								"DisplayValue": "{{#Property:NATURE}} - {{#Property:NATURE_TXT}}",
+								"ReturnValue": "{NATURE}",
+								"Target": {
+									"EntitySet": "ZAdditionalActivityCodes",
+									"QueryOptions": "$orderby=NATURE",
+									"Service": "/SAPAssetManager/Services/AssetManager.service"
+								}
+							},
+							"Search": {
+								"BarcodeScanner": true,
+								"Delay": 500,
+								"Enabled": true,
+								"MinimumCharacterThreshold": 3,
+								"Placeholder": "$(L,search)"
+							},
+							"Value": "/SAPAssetManager/Rules/WorkOrders/CreateUpdate/WorkOrderCreateUpdateDefault.js",
+							"_Name": "ZAddActivityCodeTypeLstPkr",
+							"_Type": "Control.Type.FormCell.ListPicker"
+						},
+						{
+							"AllowMultipleSelection": false,
+							"Caption": "$(L,zsystemcondn)",
+							"IsPickerDismissedOnSelection": true,
+							"IsSearchCancelledAfterSelection": true,
+							"PickerItems": {
+								"DisplayValue": "{{#Property:ANZLU}} - {{#Property:ANZLUX}}",
+								"ReturnValue": "{ANZLU}",
+								"Target": {
+									"EntitySet": "ZSystemConditions",
+									"QueryOptions": "$orderby=ANZLU",
+									"Service": "/SAPAssetManager/Services/AssetManager.service"
+								}
+							},
+							"Search": {
+								"BarcodeScanner": true,
+								"Delay": 500,
+								"Enabled": true,
+								"MinimumCharacterThreshold": 3,
+								"Placeholder": "$(L,search)"
+							},
+							"Value": "{ZSystemCondition}",
+							"_Name": "ZSystemConditionTypeLstPkr",
+							"_Type": "Control.Type.FormCell.ListPicker"
+						},
+						{
+							"AllowMultipleSelection": false,
+							"Caption": "$(L,zdigitalimpact)",
+							"IsPickerDismissedOnSelection": true,
+							"IsSearchCancelledAfterSelection": true,
+							"OnValueChange": "/ZSAMComponent/Rules/WorkOrders/CreateUpdate/DigitalImpactOnValueChange.js",
+							"PickerItems": {
+								"DisplayValue": "{{#Property:dig_imp}} - {{#Property:des_imp}}",
+								"ReturnValue": "{dig_imp}",
+								"Target": {
+									"EntitySet": "ZDigitalImpacts",
+									"QueryOptions": "$orderby=dig_imp",
+									"Service": "/SAPAssetManager/Services/AssetManager.service"
+								}
+							},
+							"Search": {
+								"BarcodeScanner": true,
+								"Delay": 500,
+								"Enabled": true,
+								"MinimumCharacterThreshold": 3,
+								"Placeholder": "$(L,search)"
+							},
+							"Value": "{ZDigitalImpact}",
+							"_Name": "ZDigitalImpactTypeLstPkr",
+							"_Type": "Control.Type.FormCell.ListPicker"
+						},
+						{
+							"AllowMultipleSelection": false,
+							"Caption": "$(L,zdigitalcategory)",
+							"IsPickerDismissedOnSelection": true,
+							"IsSearchCancelledAfterSelection": true,
+							"PickerItems": {
+								"DisplayValue": "{{#Property:DIG_CAT}} - {{#Property:DES_CAT}}",
+								"ReturnValue": "{DIG_CAT}",
+								"Target": {
+									"EntitySet": "ZDigitalImpactCategorys",
+									"QueryOptions": "$filter=DIG_IMP eq '{{#Property:dig_imp}}'&$orderby=DIG_CAT",
+									"Service": "/SAPAssetManager/Services/AssetManager.service"
+								}
+							},
+							"Search": {
+								"BarcodeScanner": true,
+								"Delay": 500,
+								"Enabled": true,
+								"MinimumCharacterThreshold": 3,
+								"Placeholder": "$(L,search)"
+							},
+							"Value": "{ZDigitalCategory}",
+							"_Name": "ZDigitalImpactCategoryTypeLstPkr",
+							"_Type": "Control.Type.FormCell.ListPicker"
+						},
+						{
+							"Caption": "$(L,Favorite)",
+							"IsEditable": true,
+							"IsVisible": true,
+							"Value": "/SAPAssetManager/Rules/WorkOrders/DisplayValueMarkedJob.js",
+							"_Name": "Marked",
+							"_Type": "Control.Type.FormCell.Switch"
+						},
+						{
+							"Caption": "$(L, note)",
+							"IsAutoResizing": true,
+							"IsEditable": true,
+							"IsVisible": "/SAPAssetManager/Rules/WorkOrders/CreateUpdate/WorkOrderCreateUpdateVisibility.js",
+							"PlaceHolder": "$(L,note)",
+							"_Name": "LongTextNote",
+							"_Type": "Control.Type.FormCell.Note"
+						}
+					],
+					"Visible": true
+				},
+				{
+					"Controls": [
+						{
+							"Caption":"$(L, attachment_description)",
+							"PlaceHolder": "$(L,attachment_description)",
+                            "Value": "",
+							"_Name": "AttachmentDescription",
+							"IsAutoResizing": true,
+							"_Type": "Control.Type.FormCell.Note"
+						},
+						{
+							"_Name": "Attachment",
+							"_Type": "Control.Type.FormCell.Attachment",
+							"AttachmentTitle": "$(L,attached_files)",
+							"AttachmentAddTitle": "$(L,add)",
+							"AttachmentActionType": [
+								"AddPhoto",
+								"TakePhoto",
+								"SelectFile"
+							],
+							"AllowedFileTypes": [],
+							"Value": "/SAPAssetManager/Rules/Documents/InitializeAttachments.js"
+						}
+					],
+					"Visible": true
+				},
+				{
+					"Controls": [
+						{
+							"IsVisible": "/SAPAssetManager/Rules/Common/IsDiscardButtonVisible.js",
+							"OnPress": "/SAPAssetManager/Rules/Common/DiscardAction.js",
+							"TextAlignment": "/SAPAssetManager/Rules/Common/Platform/ModalButtonAlign.js",
+							"Title": "$(L,discard)",
+							"_Name": "DiscardButton",
+							"_Type": "Control.Type.FormCell.Button"
+						}
+					],
+					"Visible": true
+				}
+			],
+			"_Name": "FormCellContainer",
+			"_Type": "Control.Type.FormCellContainer"
+		}
+	],
+	"OnLoaded": "/SAPAssetManager/Rules/WorkOrders/CreateUpdate/WorkOrderCreateUpdateOnPageLoad.js",
+	"_Name": "WorkOrderCreateUpdatePage",
+	"_Type": "Page"
+}

@@ -1,0 +1,105 @@
+{
+	"ActionBar": {
+		"Items": [
+			{
+				"OnPress": "/SAPAssetManager/Actions/BusinessPartners/BusinessPartnerEditNav.action",
+				"Position": "right",
+				"SystemItem": "Edit"
+			}
+		]
+	},
+	"Caption": "$(L,business_partner)",
+	"Controls": [
+		{
+			"Sections": [
+				{
+					"EmptySection": {
+						"FooterVisible": false
+					},
+					"Header": {
+						"Caption": "$(L,business_partner_detail)",
+						"UseTopPadding": true
+					},
+					"KeyAndValues": [
+						{
+							"KeyName": "$(L,name)",
+							"Value": "/SAPAssetManager/Rules/BusinessPartners/BusinessPartnerName.js"
+						},
+						{
+							"KeyName": "$(L,partner_id)",
+							"Value": "{PartnerNum}",
+							"Visible": false
+						},
+						{
+							"KeyName": "$(L,partner_type)",
+							"Value": "#Property:PartnerFunction_Nav/#Property:Description"
+						}
+					],
+					"Layout": {
+						"NumberOfColumns": 2
+					},
+					"MaxItemCount": 1,
+					"_Name": "BusinessPartnerDetails",
+					"_Type": "Section.Type.KeyValue"
+				},
+				{
+					"DataSubscriptions": [
+						"Addresses",
+						"AddressesAtWork",
+						"EmployeeAddresses",
+						"AddressCommunications",
+						"AddressesAtWorkComm",
+						"EmployeeCommunications"
+					],
+					"EmptySection": {
+						"FooterVisible": false
+					},
+					"Header": {
+						"Caption": "$(L,contact_detail)",
+						"UseTopPadding": true
+					},
+					"KeyAndValues": [
+						{
+							"KeyName": "$(L,address)",
+							"Value": "/SAPAssetManager/Rules/BusinessPartners/BusinessPartnerAddress.js",
+							"Visible": false
+						},
+						{
+							"KeyName": "$(L,office_location)",
+							"Value": "/SAPAssetManager/Rules/BusinessPartners/BusinessPartnerOffice.js",
+							"Visible": false
+						},
+						{
+							"KeyName": "$(L,email)",
+							"Value": "/SAPAssetManager/Rules/BusinessPartners/BusinessPartnerEmail.js"
+						},
+						{
+							"KeyName": "$(L,phone)",
+							"Value": "/SAPAssetManager/Rules/BusinessPartners/BusinessPartnerTelephone.js"
+						},
+						{
+							"KeyName": "$(L,mobile)",
+							"Value": "/SAPAssetManager/Rules/BusinessPartners/BusinessPartnerMobile.js"
+						},
+						{
+							"KeyName": "$(L,fax)",
+							"Value": "/SAPAssetManager/Rules/BusinessPartners/BusinessPartnerFax.js"
+						}
+					],
+					"Layout": {
+						"NumberOfColumns": 2
+					},
+					"MaxItemCount": 1,
+					"_Name": "AddressDetailsSection",
+					"_Type": "Section.Type.KeyValue"
+				}
+			],
+			"_Name": "SectionedTable",
+			"_Type": "Control.Type.SectionedTable"
+		}
+	],
+	"OnLoaded": "/SAPAssetManager/Rules/BusinessPartners/Edit/BusinessPartnerEditIsVisible.js",
+	"OnReturning": "/SAPAssetManager/Rules/BusinessPartners/BusinessPartnerDetailsOnReturning.js",
+	"_Name": "BusinessPartnerDetailsPage",
+	"_Type": "Page"
+}

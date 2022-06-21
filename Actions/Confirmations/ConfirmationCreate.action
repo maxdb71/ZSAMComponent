@@ -1,0 +1,41 @@
+{
+    "_Type": "Action.Type.ODataService.CreateEntity",
+    "Target":
+    {
+        "EntitySet" : "Confirmations",
+        "Service" : "/SAPAssetManager/Services/AssetManager.service"
+    },
+    "Properties":
+    {
+        "ConfirmationNum" : "#ClientData/#Property:localConfirmationNum",
+        "ConfirmationCounter": "/SAPAssetManager/Rules/Confirmations/CreateUpdate/OnCommit/GenerateConfirmationCounter.js",
+        "PostingDate": "/SAPAssetManager/Rules/Confirmations/CreateUpdate/OnCommit/GetPostingDate.js",
+        "StartDate": "/ZSAMComponent/Rules/Confirmations/CreateUpdate/OnCommit/GetDateWoConversion.js",
+        "StartTime": "/ZSAMComponent/Rules/Confirmations/CreateUpdate/OnCommit/GetStartTimeWoConversion.js",
+        "StartTimeStamp": "/SAPAssetManager/Rules/Confirmations/CreateUpdate/OnCommit/GetStartTimeStamp.js",
+        "SubOperation": "#Property:SubOperation",
+        "VarianceReason": "#Property:VarianceReason",
+        "AccountingIndicator": "#Property:AccountingIndicator",
+        "ActivityType": "/ZSAMComponent/Rules/Confirmations/CreateUpdate/COActivityPickerQueryOptions.js",
+        "ActualDuration": "/SAPAssetManager/Rules/Confirmations/CreateUpdate/OnCommit/GetDuration.js",
+        "ActualDurationUOM": "MIN",
+        "ActualWork": "/SAPAssetManager/Rules/Confirmations/CreateUpdate/OnCommit/GetDuration.js",
+        "ActualWorkUOM": "MIN",
+        "CompleteFlag": "",
+        "FinalConfirmation": "/SAPAssetManager/Rules/Confirmations/CreateUpdate/OnCommit/GetIsFinalConfirmation.js",
+        "FinishDate": "/ZSAMComponent/Rules/Confirmations/CreateUpdate/OnCommit/GetEndDateWoConversione.js",
+        "FinishTime": "/ZSAMComponent/Rules/Confirmations/CreateUpdate/OnCommit/GetEndTimeWoConversion.js",
+        "Operation": "#Property:Operation",
+        "OrderID": "#Property:OrderID",
+        "PersonnelNumber": "/SAPAssetManager/Rules/TimeSheets/CreateUpdate/TimeSheetCreateUpdatePersonnelNumber.js",
+        "Plant": "",
+        "ReverseIndicator": ""
+    },
+    "Headers": {
+        "OfflineOData.RemoveAfterUpload": "true",
+        "OfflineOData.TransactionID": "#ClientData/#Property:localConfirmationNum"
+    },
+    "CreateLinks": "/SAPAssetManager/Rules/Confirmations/CreateUpdate/OnCommit/CreateLinks.js",
+    "ValidationRule": "/SAPAssetManager/Rules/Confirmations/CreateUpdate/OnCommit/IsValidConfirmation.js",
+    "OnSuccess": "/SAPAssetManager/Rules/ClockInClockOut/Confirmations/ConfirmationSuccess.js"
+}

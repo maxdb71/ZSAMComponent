@@ -1,0 +1,39 @@
+{
+	"_Type": "Action.Type.ODataService.CreateEntity",
+	"Target":
+	{
+		"EntitySet": "MyNotificationHeaders",
+		"Service": "/SAPAssetManager/Services/AssetManager.service"
+	},
+	"Properties": 
+	{
+		"BreakdownIndicator": "/SAPAssetManager/Rules/Notifications/BreakdownSwitchValue.js",
+		"HeaderEquipment": "/SAPAssetManager/Rules/Notifications/CreateUpdate/NotificationCreateUpdateEquipmentLstPkrValue.js",
+		"HeaderFunctionLocation": "/SAPAssetManager/Rules/Notifications/CreateUpdate/NotificationCreateUpdateFunctionalLocationLstPkrValue.js",
+		"NotificationDescription": "#Control:NotificationDescription/#Value",
+		"NotificationNumber": "/SAPAssetManager/Rules/Notifications/GenerateNotificationID.js",
+		"NotificationType": "'#Control:TypeLstPkr/#Value'",
+		"Priority": "/SAPAssetManager/Rules/Notifications/CreateUpdate/NotificationCreateUpdatePrioritySegValue.js",
+		"QMCode": "/ZSAMComponent/Rules/Notifications/CreateUpdate/NotificationCreateUpdateCodingLstPkrValue.js",
+		"QMCodeGroup": "/ZSAMComponent/Rules/Notifications/CreateUpdate/NotificationCreateUpdateCodingGroupLstPkrValue.js",
+        "MalfunctionStartDate": "/ZSAMComponent/Rules/Notifications/CreateUpdate/GetMalFunctionStartDate.js",
+        "MalfunctionStartTime": "/ZSAMComponent/Rules/Notifications/CreateUpdate/GetMalFunctionStartTime.js",
+        "RequiredEndDate": "/ZSAMComponent/Rules/Notifications/CreateUpdate/GetRequiredEndDate.js",
+        "ZRequiredEndTime": "/ZSAMComponent/Rules/Notifications/CreateUpdate/GetRequiredEndTime.js",
+		"MalfunctionEndDate": "/ZSAMComponent/Rules/Notifications/CreateUpdate/GetMalFunctionEndDate.js",
+		"MalfunctionEndTime": "/ZSAMComponent/Rules/Notifications/CreateUpdate/GetMalFunctionEndTime.js",
+		"RequiredStartDate": "/ZSAMComponent/Rules/Notifications/CreateUpdate/GetRequiredStartDate.js",
+		"ZRequiredStartTime":"/ZSAMComponent/Rules/Notifications/CreateUpdate/GetRequiredStartTime.js"
+	},
+	"CreateLinks": "/SAPAssetManager/Rules/Notifications/CreateUpdate/NotificationLinks.js",
+    "Headers":
+	{
+        "OfflineOData.RemoveAfterUpload": "true",
+        "OfflineOData.TransactionID": "/SAPAssetManager/Rules/Notifications/GenerateNotificationID.js"
+    },
+	"ValidationRule": "/SAPAssetManager/Rules/Notifications/CreateUpdate/NotificationCreateUpdateValidation.js",
+	"ActionResult":
+	{
+		"_Name": "CreateNotification"
+	}
+}

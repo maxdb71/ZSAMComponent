@@ -1,0 +1,86 @@
+{
+	"Service": "/ZSAMComponent/Services/AssetManager.service",
+	"Collection": [
+		"FormAssessmentQuestions"
+	],
+	"Properties": [
+		{
+			"_Type": "Edm.String",
+			"Key": true,
+			"_Name": "AssessmentId"
+		},
+		{
+			"_Type": "Edm.String",
+			"Key": true,
+			"_Name": "QuestionId"
+		},
+		{
+			"_Type": "Edm.String",
+			"Key": true,
+			"_Name": "GroupId"
+		},
+		{
+			"_Type": "Edm.String",
+			"Key": false,
+			"_Name": "DisplayId"
+		},
+		{
+			"_Type": "Edm.String",
+			"Key": false,
+			"_Name": "AnswerId"
+		},
+		{
+			"_Type": "Edm.String",
+			"Key": false,
+			"_Name": "SelectedAnswerOptionId"
+		},
+		{
+			"_Type": "Edm.String",
+			"Key": false,
+			"_Name": "Status"
+		},
+		{
+			"_Type": "Edm.String",
+			"Key": false,
+			"_Name": "Version"
+		},
+		{
+			"_Type": "Edm.String",
+			"Key": false,
+			"_Name": "Comments"
+		},
+		{
+			"_Type": "Edm.String",
+			"Key": false,
+			"_Name": "SortNumber"
+		}
+	],
+	"NavigationProperties": [
+		{
+			"_Type": "AnswerHeader",
+			"Key": false,
+			"_Name": "AnswerHeader_Nav"
+		},
+		{
+			"_Type": "AnswerOption",
+			"Key": false,
+			"_Name": "AnswerOption_Nav"
+		},
+		{
+			"_Type": "FormBusObject",
+			"Key": false,
+			"_Name": "FormBusObject_Nav"
+		},
+		{
+			"_Type": "FormGroup",
+			"Key": false,
+			"_Name": "FormGroup_Nav"
+		},
+		{
+			"_Type": "FormQuestion",
+			"Key": false,
+			"_Name": "FormQuestion_Nav"
+		}
+	],
+	"_Name": "FormAssessmentQuestion"
+}

@@ -1,0 +1,34 @@
+{
+	"_Type": "Action.Type.ODataService.UpdateEntity",
+	"Target":
+	{
+		"EntitySet" : "MyNotificationHeaders",
+		"Service" : "/SAPAssetManager/Services/AssetManager.service",
+		"ReadLink" : "{@odata.readLink}"
+	},
+	"Properties":
+	{
+		"QMCode": "/ZSAMComponent/Rules/Notifications/CreateUpdate/NotificationCreateUpdateCodingLstPkrValue.js",
+		"QMCodeGroup": "/ZSAMComponent/Rules/Notifications/CreateUpdate/NotificationCreateUpdateCodingGroupLstPkrValue.js",
+        "MalfunctionStartDate": "/ZSAMComponent/Rules/Notifications/CreateUpdate/GetMalFunctionStartDate.js",
+        "MalfunctionStartTime": "/ZSAMComponent/Rules/Notifications/CreateUpdate/GetMalFunctionStartTime.js",
+        "RequiredEndDate": "/ZSAMComponent/Rules/Notifications/CreateUpdate/GetRequiredEndDate.js",
+        "ZRequiredEndTime": "/ZSAMComponent/Rules/Notifications/CreateUpdate/GetRequiredEndTime.js",
+		"MalfunctionEndDate": "/ZSAMComponent/Rules/Notifications/CreateUpdate/GetMalFunctionEndDate.js",
+		"MalfunctionEndTime": "/ZSAMComponent/Rules/Notifications/CreateUpdate/GetMalFunctionEndTime.js",
+		"RequiredStartDate": "/ZSAMComponent/Rules/Notifications/CreateUpdate/GetRequiredStartDate.js",
+		"ZRequiredStartTime":"/ZSAMComponent/Rules/Notifications/CreateUpdate/GetRequiredStartTime.js"
+  
+	},
+    "Headers":
+	{
+        "OfflineOData.TransactionID": "#Property:NotificationNumber"
+    },
+	"UpdateLinks": "/SAPAssetManager/Rules/Notifications/CreateUpdate/NotificationLinks.js",
+	"DeleteLinks": "/SAPAssetManager/Rules/Notifications/CreateUpdate/NotificationLinksDelete.js",
+    "OnSuccess": "/SAPAssetManager/Rules/Notifications/CreateUpdate/NotificationUpdateSuccess.js",
+	"OnFailure": "/SAPAssetManager/Actions/CreateUpdateDelete/UpdateEntityFailureMessage.action",
+	"ValidationRule": "/SAPAssetManager/Rules/Notifications/CreateUpdate/NotificationCreateUpdateValidation.js",
+	"ShowActivityIndicator": true,
+	"ActivityIndicatorText" : "  "
+}

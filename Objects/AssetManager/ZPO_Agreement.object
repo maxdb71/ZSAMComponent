@@ -1,0 +1,59 @@
+{
+	"Service": "/ZSAMComponent/Services/AssetManager.service",
+	"Collection": [
+		"ZPO_Agreements"
+	],
+	"Properties": [
+		{
+			"_Type": "Edm.String",
+			"Key": true,
+			"_Name": "EBELN"
+		},
+		{
+			"_Type": "Edm.String",
+			"Key": true,
+			"_Name": "EBELP"
+		},
+		{
+			"_Type": "Edm.String",
+			"Key": false,
+			"_Name": "BUKRS"
+		},
+		{
+			"_Type": "Edm.String",
+			"Key": false,
+			"_Name": "BSTYPE"
+		},
+		{
+			"_Type": "Edm.String",
+			"Key": false,
+			"_Name": "EKORG"
+		},
+		{
+			"_Type": "Edm.String",
+			"Key": false,
+			"_Name": "KDATE"
+		},
+		{
+			"_Type": "Edm.String",
+			"Key": false,
+			"_Name": "EKGRP"
+		},
+		{
+			"_Type": "Edm.String",
+			"Key": false,
+			"_Name": "TXZ01"
+		},
+		{
+			"_Type": "Edm.String",
+			"Key": false,
+			"_Name": "MATKL"
+		},
+		{
+			"_Type": "Edm.String",
+			"Key": false,
+			"_Name": "AFNAM"
+		}
+	],
+	"_Name": "ZPO_Agreement"
+}

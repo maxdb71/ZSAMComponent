@@ -1,0 +1,19 @@
+{
+	"Service": "/ZSAMComponent/Services/AssetManager.service",
+	"Collection": [
+		"ZSystemConditions"
+	],
+	"Properties": [
+		{
+			"_Type": "Edm.String",
+			"Key": true,
+			"_Name": "ANZLU"
+		},
+		{
+			"_Type": "Edm.String",
+			"Key": false,
+			"_Name": "ANZLUX"
+		}
+	],
+	"_Name": "ZSystemCondition"
+}

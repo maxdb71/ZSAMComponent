@@ -1,0 +1,156 @@
+{
+	"Service": "/ZSAMComponent/Services/AssetManager.service",
+	"Collection": [
+		"NotificationHistories"
+	],
+	"Properties": [
+		{
+			"_Type": "Edm.String",
+			"Key": false,
+			"_Name": "NotificationType"
+		},
+		{
+			"_Type": "Edm.String",
+			"Key": false,
+			"_Name": "OrderId"
+		},
+		{
+			"_Type": "Edm.String",
+			"Key": false,
+			"_Name": "Description"
+		},
+		{
+			"_Type": "Edm.String",
+			"Key": false,
+			"_Name": "Priority"
+		},
+		{
+			"_Type": "Edm.String",
+			"Key": false,
+			"_Name": "BreakDown"
+		},
+		{
+			"_Type": "Edm.String",
+			"Key": true,
+			"_Name": "TechObject"
+		},
+		{
+			"_Type": "Edm.String",
+			"Key": true,
+			"_Name": "ReferenceType"
+		},
+		{
+			"_Type": "Edm.String",
+			"Key": false,
+			"_Name": "PersonRespNum"
+		},
+		{
+			"_Type": "Edm.String",
+			"Key": false,
+			"_Name": "PersonRespName"
+		},
+		{
+			"_Type": "Edm.String",
+			"Key": false,
+			"_Name": "PriorityType"
+		},
+		{
+			"_Type": "Edm.String",
+			"Key": false,
+			"_Name": "EquipId"
+		},
+		{
+			"_Type": "Edm.String",
+			"Key": false,
+			"_Name": "FuncLocIdIntern"
+		},
+		{
+			"_Type": "Edm.DateTime",
+			"Key": false,
+			"_Name": "CompletionDate"
+		},
+		{
+			"_Type": "Edm.Time",
+			"Key": false,
+			"_Name": "CompletionTime"
+		},
+		{
+			"_Type": "Edm.DateTime",
+			"Key": false,
+			"_Name": "RequiredStartDate"
+		},
+		{
+			"_Type": "Edm.Time",
+			"Key": false,
+			"_Name": "RequiredStartTime"
+		},
+		{
+			"_Type": "Edm.DateTime",
+			"Key": false,
+			"_Name": "MalfunctionStartDate"
+		},
+		{
+			"_Type": "Edm.Time",
+			"Key": false,
+			"_Name": "MalfunctionStartTime"
+		},
+		{
+			"_Type": "Edm.DateTime",
+			"Key": false,
+			"_Name": "MalfunctionEndDate"
+		},
+		{
+			"_Type": "Edm.Time",
+			"Key": false,
+			"_Name": "MalfunctionEndTime"
+		},
+		{
+			"_Type": "Edm.String",
+			"Key": true,
+			"_Name": "NotificationNumber"
+		},
+		{
+			"_Type": "Edm.DateTime",
+			"Key": false,
+			"_Name": "RequiredEndDate"
+		},
+		{
+			"_Type": "Edm.Time",
+			"Key": false,
+			"_Name": "RequiredEndTime"
+		}
+	],
+	"NavigationProperties": [
+		{
+			"_Type": "MyEquipment",
+			"Key": false,
+			"_Name": "Equipment_Nav"
+		},
+		{
+			"_Type": "MyFunctionalLocation",
+			"Key": false,
+			"_Name": "FuncLoc_Nav"
+		},
+		{
+			"_Type": "NotificationHistoryText",
+			"Key": false,
+			"_Name": "HistoryLongText_Nav"
+		},
+		{
+			"_Type": "Priority",
+			"Key": false,
+			"_Name": "HistoryPriority_Nav"
+		},
+		{
+			"_Type": "MyNotificationHeader",
+			"Key": false,
+			"_Name": "NotificationHeader_Nav"
+		},
+		{
+			"_Type": "MyWorkOrderHeader",
+			"Key": false,
+			"_Name": "RelatedWO_Nav"
+		}
+	],
+	"_Name": "NotificationHistory"
+}

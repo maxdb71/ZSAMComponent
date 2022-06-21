@@ -1,0 +1,31 @@
+{
+	"Service": "/ZSAMComponent/Services/AssetManager.service",
+	"Collection": [
+		"VendorsCompanyData"
+	],
+	"Properties": [
+		{
+			"_Type": "Edm.String",
+			"Key": false,
+			"_Name": "CompanyBlock"
+		},
+		{
+			"_Type": "Edm.String",
+			"Key": true,
+			"_Name": "Vendor"
+		},
+		{
+			"_Type": "Edm.String",
+			"Key": true,
+			"_Name": "CompanyCode"
+		}
+	],
+	"NavigationProperties": [
+		{
+			"_Type": "Vendor",
+			"Key": false,
+			"_Name": "Vendor_Nav"
+		}
+	],
+	"_Name": "VendorCompanyData"
+}

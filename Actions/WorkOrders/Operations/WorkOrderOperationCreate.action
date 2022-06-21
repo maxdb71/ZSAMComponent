@@ -1,0 +1,28 @@
+{
+    "_Type": "Action.Type.ODataService.CreateEntity",
+    "Target": {
+        "EntitySet": "MyWorkOrderOperations",
+        "Service": "/SAPAssetManager/Services/AssetManager.service"
+    },
+    "Properties": {
+        "OperationNo": "/SAPAssetManager/Rules/WorkOrders/Operations/CreateUpdate/OperationLocalID.js",
+        "OperationShortText": "#Page:WorkOrderOperationAddPage/#Control:DescriptionNote/#Value",
+        "ControlKey": "/SAPAssetManager/Rules/WorkOrders/Operations/CreateUpdate/WorkOrderOperationCreateUpdateControlKeyValue.js",
+        "PersonNum": "/SAPAssetManager/Rules/WorkOrders/Operations/WorkOrderOperationPersonNum.js",
+        "WorkUnit": "/ZSAMComponent/Rules/WorkOrders/Operations/CreateUpdate/WorkOrderOperationCreateUpdateWorkUnit.js",
+        "NumberOfCapacities": "/ZSAMComponent/Rules/WorkOrders/Operations/CreateUpdate/WorkOrderOperationCreateUpdateNoOfCapacities.js",
+        "Duration": "/ZSAMComponent/Rules/WorkOrders/Operations/CreateUpdate/WorkOrderOperationCreateUpdateDuration.js",
+        "DurationUOM": "/ZSAMComponent/Rules/WorkOrders/Operations/CreateUpdate/WorkOrderOperationCreateUpdateDurationUOM.js",
+        "MainWorkCenterPlant": "/ZSAMComponent/Rules/WorkOrders/Operations/CreateUpdate/WorkOrderOperationPlantDefault.js",
+        "MainWorkCenter": "/ZSAMComponent/Rules/WorkOrders/Operations/CreateUpdate/WorkOrderOperationWorkCenterDefault.js"
+
+    },
+    "Headers": {
+        "OfflineOData.RemoveAfterUpload": "true",
+        "OfflineOData.TransactionID": "/SAPAssetManager/Rules/WorkOrders/Operations/CreateUpdate/OperationTransactionID.js"
+    },
+    "CreateLinks": "/SAPAssetManager/Rules/WorkOrders/Operations/CreateUpdate/WorkOrderOperationCreateUpdateLinks.js",
+    "OnFailure": "/SAPAssetManager/Actions/CreateUpdateDelete/CreateEntityFailureMessage.action",
+    "ShowActivityIndicator": true,
+    "ActivityIndicatorText" : " "
+}

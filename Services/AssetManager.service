@@ -1,0 +1,7 @@
+{
+	"AppId": "com.sap.mobile.sam.enel.w4us.app",
+	"DestinationName": "DEST_SAM40_PPROP",
+	"LanguageURLParam": "sap-language",
+	"OfflineEnabled": true,
+	"ServiceUrl": "/destinations/MobileServices"
+}

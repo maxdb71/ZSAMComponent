@@ -1,0 +1,86 @@
+{
+	"Service": "/ZSAMComponent/Services/AssetManager.service",
+	"Collection": [
+		"Materials"
+	],
+	"Properties": [
+		{
+			"_Type": "Edm.String",
+			"Key": false,
+			"_Name": "MaterialType"
+		},
+		{
+			"_Type": "Edm.String",
+			"Key": false,
+			"_Name": "ProductHierarchy"
+		},
+		{
+			"_Type": "Edm.String",
+			"Key": false,
+			"_Name": "SerialNumberProfile"
+		},
+		{
+			"_Type": "Edm.String",
+			"Key": false,
+			"_Name": "Description"
+		},
+		{
+			"_Type": "Edm.String",
+			"Key": true,
+			"_Name": "MaterialNum"
+		},
+		{
+			"_Type": "Edm.String",
+			"Key": false,
+			"_Name": "BaseUOM"
+		}
+	],
+	"NavigationProperties": [
+		{
+			"_Type": "Collection(MaterialBatch)",
+			"Key": false,
+			"_Name": "MaterialBatch_Nav"
+		},
+		{
+			"_Type": "Collection(BOMItem)",
+			"Key": false,
+			"_Name": "MaterialBoM_Nav"
+		},
+		{
+			"_Type": "Collection(MaterialPlant)",
+			"Key": false,
+			"_Name": "MaterialPlants"
+		},
+		{
+			"_Type": "Collection(MaterialSLoc)",
+			"Key": false,
+			"_Name": "MaterialSLocs"
+		},
+		{
+			"_Type": "Collection(MaterialSales)",
+			"Key": false,
+			"_Name": "MaterialSales_Nav"
+		},
+		{
+			"_Type": "Collection(MaterialUOM)",
+			"Key": false,
+			"_Name": "MaterialUOMs"
+		},
+		{
+			"_Type": "Collection(MyEquipSerialNumber)",
+			"Key": false,
+			"_Name": "SerialNumbers"
+		},
+		{
+			"_Type": "Collection(MyWorkOrderComponent)",
+			"Key": false,
+			"_Name": "WorkOrderComponent"
+		},
+		{
+			"_Type": "Collection(MyWorkOrderTool)",
+			"Key": false,
+			"_Name": "WorkOrderTool"
+		}
+	],
+	"_Name": "Material"
+}

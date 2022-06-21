@@ -1,0 +1,19 @@
+{
+	"Service": "/ZSAMComponent/Services/AssetManager.service",
+	"Collection": [
+		"PMAuthorizationGroups"
+	],
+	"Properties": [
+		{
+			"_Type": "Edm.String",
+			"Key": true,
+			"_Name": "AuthorizationGroup"
+		},
+		{
+			"_Type": "Edm.String",
+			"Key": false,
+			"_Name": "AuthGroupText"
+		}
+	],
+	"_Name": "PMAuthorizationGroup"
+}
